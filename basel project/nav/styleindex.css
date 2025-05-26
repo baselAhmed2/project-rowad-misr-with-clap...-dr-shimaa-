@@ -1,0 +1,567 @@
+/* general */
+/* Reset basic browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif; /* Default font */
+    line-height: 1.6; /* Line height for readability */
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Default text color */
+  }
+  
+  /* Link styles */
+  a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from surrounding text */
+  }
+  
+  a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  /* Heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /* Make headings not bold by default */
+    margin-bottom: 0.625rem; /* Add margin below headings */
+  }
+  
+  /* List styles */
+  ul, ol {
+    list-style: none; /* Remove default bullet points or numbers */
+    padding-left: 0;
+  }
+  
+  /* General content wrapper */
+  .container {
+    width: 90%;
+    max-width: 75rem; /* Max width for the container */
+    margin: 0 auto; /* Center content */
+  }
+  
+  /* Flexbox grid structure */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.9375rem; /* Remove space between columns */
+  }
+  
+  .col {
+    flex: 1;
+    padding: 0.9375rem;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 0.625rem 1.25rem; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 0.25rem; /* Rounded corners */
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+  }
+  
+  /* Image styles */
+  img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove space below images */
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between table borders */
+  }
+  
+  th, td {
+    padding: 0.625rem;
+    border: 0.0625rem solid #ccc;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f8f9fa; /* Light background for table headers */
+  }
+  
+  /* Form input styles */
+  input, select, textarea {
+    padding: 0.625rem;
+    font-size: 1rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    width: 100%; /* Make inputs stretch to full width */
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none; /* Remove outline on focus */
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  /* Alert message styles */
+  .alert {
+    padding: 1.25rem;
+    margin: 0.625rem 0;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  
+  /* Transitions and hover effects */
+  .transition {
+    transition: all 0.3s ease;
+  }
+  
+  .transition:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+  }
+  
+  /* Navbar */
+  /* Base Navbar Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  
+    position: sticky;
+     z-index: 1000;
+  }
+  
+  .logoTxt span {
+    color: #FF2D55;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .logoTxt{
+    font-family: "Inter", sans-serif;
+  }
+  /* Sidebar Styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0.25rem 0 0.375rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar a {
+    padding: 0.75rem 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Toggle Button */
+  .navbar-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+  }
+  
+  @media (min-width: 768px) {
+    .navbar-toggle {
+      display: none;
+    }
+    .sidebar {
+      position: static;
+      flex-direction: row;
+      height: auto;
+      background: none;
+      box-shadow: none;
+      width: auto;
+    }
+    .sidebar a {
+      border: none;
+      padding: 0 1rem;
+    }
+  }
+  /* General styles for search bar */
+.searchbar {
+    margin-top: 1rem; /* مسافة من الأعلى */
+    width: 100%;
+    /* display: flex; */
+    justify-content: center;
+    border: #b6b5b51b;
+  }
+
+  
+  .searchbar input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px; /* تحديد عرض مناسب */
+  }
+  
+  /* Search bar for large screens */
+  @media (min-width: 768px) {
+    .searchbar {
+      margin-top: 0;
+      width: auto;
+    }
+    .sidebar {
+      flex-direction: row;
+      align-items: center;
+    }
+    .searchbar input {
+      max-width: none; /* عرض كامل على الشاشات الكبيرة */
+    }
+  }
+  /* Navbar base styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* توزيع العناصر على الطرفين */
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  /* البحث على الجهة اليسرى */
+  .searchbar {
+    flex: 1; /* يأخذ مساحة لتحديد مكانه */
+  }
+  
+  .searchbar input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px; /* عرض مناسب */
+    min-height: 100px;
+  }
+  
+  /* الروابط في المنتصف */
+  .sidebar {
+    flex: 1; /* تأخذ مكانًا متساويًا مثل شريط البحث */
+    display: flex;
+    justify-content: center; /* محاذاة في المنتصف */
+    gap: 1rem; /* مسافة بين الروابط */
+    z-index: 9999;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f0f0f0; /* تأثير عند التمرير */
+  }
+  
+  /* الشعار (Logo) ثابت */
+  .logoTxt {
+    flex: 0.5; /* يأخذ مكانه في البداية */
+   
+  }
+  
+.searchbar input {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  width: 100%;
+  max-width: 200px;
+  min-height: auto; /* شيل الارتفاع الكبير */
+  background-color: rgba(255, 255, 255, 1);
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchbar input:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.searchbar input {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 180px;
+  min-height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchbar input:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.searchbar {
+  flex: 0 0 auto; /* خليه ياخد الحجم اللي محتاجه بس */
+  max-width: 200px;
+}
+
+  /* ====================================================== */
+
+  /* footer */
+
+  /* Footer */
+
+  footer{
+    
+    position: relative;
+    width: 100%;
+    height: 440px ;
+    left: 0px;
+    /* top: 5462px; */
+    bottom: 0;
+    /* Button */
+    background: #000000;
+    
+    
+  }
+
+  .footer_item .logoTxt{
+    color: #f0f0f0;
+  }
+
+  .footer_item{
+    color: #f0f0f0;
+    display: block;
+    position: relative;
+    left: 15%;
+    top: 20%;
+ 
+    
+  }
+  .footer_item h3{
+   margin-top: 2rem;
+  }
+  .countner{
+    display: flex;
+  }
+
+  /* إعداد الحاوية */
+.grid-container {
+  display: grid; /* تفعيل الـ Grid */
+  grid-template-columns: repeat(3, 0.2fr); /* تقسيم إلى 3 أعمدة */
+  gap: 1rem; /* مسافة بين العناصر */
+  padding: 0.5rem;
+
+  border-radius: 5px; 
+  
+  width: auto;
+}
+
+/* تنسيق الروابط */
+.grid-container a {
+  text-decoration: none; /* إزالة الخط السفلي */
+  color: #ffffff; /* لون النص */
+
+}
+
+/* تأثير عند التمرير */
+.grid-container a:hover {
+  background-color: #007bff; /* خلفية زرقاء */
+  color: #fff; /* نص أبيض */
+  border: 1px solid #007bff; /* حدود زرقاء */
+}
+
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* تقليل الأعمدة إلى 2 */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+    
+  }
+  footer{
+    height: auto ;
+  }
+}
+
+
+
+/* ___________________________ */
+/* opening */
+
+.container_frame1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+  gap: 10px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* العنصر الأول */
+.item:nth-child(1) {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+/* العنصر الثاني */
+.item:nth-child(2) {
+  width: 55.75rem;
+  height: 21.5rem;
+  
+
+}
+
+
+/* edits  */
+
+
+/* تحسين `hover` */
+.item .item_categores:hover {
+  color: rgb(170, 26, 26);
+}
+
+/* النقاط */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dot.active {
+  opacity: 1;
+  background-color: black;
+}
+
+/* السلايدر */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* جعل الكود ريسبونسف */
+@media (max-width: 1024px) {
+  .container_frame1 {
+    grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
+  }
+  
+  .item:nth-child(2) {
+    width: 100%; /* اجعلها تأخذ العرض بالكامل */
+    max-width: 892px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container_frame1 {
+    grid-template-columns: 1fr; /* عنصر واحد في كل صف على الشاشات الصغيرة */
+  }
+
+  .item:nth-child(1),
+  .item:nth-child(2) {
+    width: 100%;
+    max-width: 892px;
+  }
+  
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* يجعل النصوص تظهر بجانب بعضها */
+  .item p {
+    display: inline-block;
+    margin-right: 10px; /* مسافة بين العناصر */
+  }
+
+  .item:nth-child(2) {
+
+    margin-top: 2rem;
+  
+  }
+  
+}
+
+.searchbar input[type="search"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  background-color: #ffffff;
+  color: #333;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.searchbar input[type="search"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}

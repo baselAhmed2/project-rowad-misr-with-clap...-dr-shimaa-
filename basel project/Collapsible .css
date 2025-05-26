@@ -1,0 +1,109 @@
+   /* Collapsible Container */
+   .souqak-collapsible-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Collapsible Item */
+.souqak-collapsible {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Collapsible Header */
+.souqak-collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #fff;
+    border: none;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+    color: #212121;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.souqak-collapsible-header:hover {
+    background-color: #f9f9f9;
+}
+
+.souqak-collapsible-header i {
+    transition: transform 0.3s ease;
+}
+
+/* Rotated icon for open state */
+.souqak-collapsible.active .souqak-collapsible-header i {
+    transform: rotate(180deg);
+}
+
+/* Collapsible Content */
+.souqak-collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: max-height 0.3s ease;
+}
+
+/* Active state for content */
+.souqak-collapsible.active .souqak-collapsible-content {
+    max-height: 300px; /* Adjust based on your content */
+}
+
+/* List within collapsible */
+.souqak-collapsible-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.souqak-collapsible-list li {
+    border-top: 1px solid #f0f0f0;
+}
+
+.souqak-collapsible-list li a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.souqak-collapsible-list li a:hover {
+    background-color: #f5f5f5;
+    color: #DB4444;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .souqak-collapsible-header {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    .souqak-collapsible-list li a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .souqak-collapsible-container {
+        margin: 20px auto;
+    }
+    
+    .souqak-collapsible {
+        margin-bottom: 8px;
+    }
+    
+    .souqak-collapsible-header {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
